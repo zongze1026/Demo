@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huatong.mapper.RoleMapper">
+
+
+    <insert id="insertRole" useGeneratedKeys="true" keyProperty="id" keyColumn="id" parameterType="com.huatong.demo.RoleInfo">
+      insert into role_info(role_name,role_level,create_time,update_time)VALUES(#{roleName},#{roleLevel},sysdate(),sysdate())
+    </insert>
+
+    <select id="getRoleList" resultType="com.huatong.demo.RoleInfo">
+        select id,role_name roleName,role_level roleLevel,create_time createTime,update_time updateTime from role_info
+    </select>
+
+
+</mapper>
