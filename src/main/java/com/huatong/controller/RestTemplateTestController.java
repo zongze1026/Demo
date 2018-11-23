@@ -34,6 +34,5 @@ public class RestTemplateTestController {
         return JSON.toJSONString(stu);
     }
 
-    public void gitTest(){}
 
 }
