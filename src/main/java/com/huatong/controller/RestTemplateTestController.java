@@ -31,6 +31,7 @@ public class RestTemplateTestController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "student",value = "名字",dataType = "Student",required = true)})
     public String getJsonStr(@RequestBody Student student){
         Student stu = new Student(student.getName(),23);
+        System.out.println("master");
         return JSON.toJSONString(stu);
     }
 
