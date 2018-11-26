@@ -6,7 +6,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@MapperScan(basePackages = "com.huatong.mapper")
 public class DemoApplication {
 
     public static void main(String[] args) {
