@@ -8,6 +8,10 @@
       insert into user(userName,age)VALUES(#{userName},#{age})
     </insert>
 
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id" keyColumn="id" parameterType="com.huatong.domain.User">
+      insert into user(userName,age)VALUES(#{userName},#{age})
+    </insert>
+
     <select id="find" resultType="com.huatong.domain.User">
         select id,userName,age from user
     </select>

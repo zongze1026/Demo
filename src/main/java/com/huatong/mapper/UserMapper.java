@@ -16,5 +16,8 @@ public interface UserMapper {
     @DynamicDatasource("slave")
     User find();
 
+    @DynamicDatasource("slave02")
+    int addUser(User user);
+
 
 }

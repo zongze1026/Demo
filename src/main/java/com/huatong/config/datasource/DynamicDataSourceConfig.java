@@ -18,7 +18,7 @@ import java.util.Map;
  * Create By xzz on 2018/11/22
  */
 @Configuration
-@MapperScan(value = {"com.huatong.mapper"},sqlSessionFactoryRef = "sqlSessionFactory")
+@MapperScan(basePackages = "com.huatong.mapper", sqlSessionFactoryRef = "sqlSessionFactory",sqlSessionTemplateRef = "sqlSessionTemplate")
 public class DynamicDataSourceConfig {
 
 
@@ -37,16 +37,24 @@ public class DynamicDataSourceConfig {
     }
 
 
+    @Bean("slave02")
+    @ConfigurationProperties(prefix = "spring.datasource.slave02")
+    public DataSource slave02() {
+        return DataSourceBuilder.create().build();
+    }
+
+
     @Bean("dynamicDataSource")
-    public DataSource dynamicDataSource(@Qualifier("master") DataSource dsM, @Qualifier("slave") DataSource dsS) {
+    public DataSource dynamicDataSource() {
         DynamicDataSource dynamicDataSource = new DynamicDataSource();
         //设置数据源
         Map<Object, Object> targetDataSources = new HashMap<>();
-        targetDataSources.put("master", dsM);
-        targetDataSources.put("slave", dsS);
+        targetDataSources.put("master", master());
+        targetDataSources.put("slave", slave());
+        targetDataSources.put("slave02", slave02());
         dynamicDataSource.setTargetDataSources(targetDataSources);
         //设置默认数据源
-        dynamicDataSource.setDefaultTargetDataSource(dsM);
+        dynamicDataSource.setDefaultTargetDataSource(slave());
         return dynamicDataSource;
     }
 

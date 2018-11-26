@@ -60,6 +60,16 @@ public class DemoApplicationTests {
     }
 
 
+
+    @Test
+    public void addUser02(){
+        User user = new User();
+        user.setAge(18);
+        user.setUserName("zhangsan");
+        userMapper.addUser(user);
+    }
+
+
     @Test
     public void find(){
         User user = userMapper.find();
