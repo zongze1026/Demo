@@ -32,6 +32,7 @@ public class RestTemplateTestController {
     public String getJsonStr(@RequestBody Student student){
         Student stu = new Student(student.getName(),23);
         System.out.println("master");
+        System.out.println("git stash test");
         return JSON.toJSONString(stu);
     }
 
