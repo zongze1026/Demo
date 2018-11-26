@@ -33,6 +33,7 @@ public class RestTemplateTestController {
         Student stu = new Student(student.getName(),23);
         System.out.println("test");
         System.out.println("git stash test");
+        System.out.println("git concat remote repository");
         return JSON.toJSONString(stu);
     }
 
