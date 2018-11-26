@@ -17,34 +17,34 @@ import java.util.List;
 @Service
 public class RoleService {
 
-    @Autowired
-    private RoleMapper mapper;
-
-    @Transactional
-    public int addRole(RoleInfo info) {
-        int i = mapper.insertRole(info);
-        int n = 1 / 0;
-        return i;
-    }
-
-
-    public PageInfo<RoleInfo> getRoleList() {
-        PageHelper.startPage(1, 5);
-        List<RoleInfo> roleList = mapper.getRoleList();
-        PageInfo<RoleInfo> pageInfo = new PageInfo<>(roleList);
-        return pageInfo;
-    }
-
-
-    @DynamicDatasource
-    public void mehtod() {
-        System.out.println("method被调用了");
-    }
-
-
-    public void mehtod2() {
-        System.out.println("method2被调用了");
-    }
+//    @Autowired
+//    private RoleMapper mapper;
+//
+//    @Transactional
+//    public int addRole(RoleInfo info) {
+//        int i = mapper.insertRole(info);
+//        int n = 1 / 0;
+//        return i;
+//    }
+//
+//
+//    public PageInfo<RoleInfo> getRoleList() {
+//        PageHelper.startPage(1, 5);
+//        List<RoleInfo> roleList = mapper.getRoleList();
+//        PageInfo<RoleInfo> pageInfo = new PageInfo<>(roleList);
+//        return pageInfo;
+//    }
+//
+//
+//    @DynamicDatasource
+//    public void mehtod() {
+//        System.out.println("method被调用了");
+//    }
+//
+//
+//    public void mehtod2() {
+//        System.out.println("method2被调用了");
+//    }
 
 
 }

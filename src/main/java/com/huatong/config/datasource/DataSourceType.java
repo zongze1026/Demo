@@ -5,8 +5,8 @@ package com.huatong.config.datasource;
  */
 public enum DataSourceType {
 
-    MASTER("master_01", "主数据源"),
-    SLAVE("slave_01", "从数据源");
+    MASTER("master", "主数据源"),
+    SLAVE("slave", "从数据源");
 
     /**
      * 数据源的key

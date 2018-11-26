@@ -14,6 +14,7 @@ public class DynamicDataSourceHolder {
      * 设置数据源的key
      */
     public static void setKey(String key) {
+        System.out.println("===========设置数据源key："+key+"=================");
         dataSourceHolder.set(key);
     }
 

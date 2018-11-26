@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
  */
 @Aspect
 @Component
-@Order(0)
+@Order(-100)
 public class DynamicDataSourceAspect {
 
 

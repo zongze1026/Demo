@@ -31,9 +31,6 @@ public class RestTemplateTestController {
     @ApiImplicitParams(value = {@ApiImplicitParam(name = "student",value = "名字",dataType = "Student",required = true)})
     public String getJsonStr(@RequestBody Student student){
         Student stu = new Student(student.getName(),23);
-        System.out.println("master");
-        System.out.println("git stash test");
-        System.out.println("git concat remote repository");
         return JSON.toJSONString(stu);
     }
 

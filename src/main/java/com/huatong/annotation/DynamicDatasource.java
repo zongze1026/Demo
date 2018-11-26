@@ -9,6 +9,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface DynamicDatasource {
 
-    String value() default "masterDataSource";
+    String value() default "master";
 
 }
